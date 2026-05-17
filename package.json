@@ -1,0 +1,44 @@
+{
+  "name": "h2c-vertical-typesetter",
+  "version": "0.1.0",
+  "description": "Deterministic vertical-rl CJK text rendering for html2canvas captures.",
+  "type": "module",
+  "main": "./src/h2c-vertical-typesetter.js",
+  "module": "./src/h2c-vertical-typesetter.js",
+  "browser": "./dist/h2c-vertical-typesetter.global.js",
+  "types": "./src/h2c-vertical-typesetter.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/h2c-vertical-typesetter.d.ts",
+      "import": "./src/h2c-vertical-typesetter.js"
+    }
+  },
+  "files": [
+    "src",
+    "dist",
+    "scripts",
+    "demo",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:global": "node scripts/build-global.js",
+    "check": "node --check src/h2c-vertical-typesetter.js && node --check demo/demo.js && node --check scripts/build-global.js && node --check dist/h2c-vertical-typesetter.global.js"
+  },
+  "keywords": [
+    "html2canvas",
+    "vertical-rl",
+    "cjk",
+    "chinese",
+    "canvas",
+    "screenshot",
+    "typesetting"
+  ],
+  "peerDependencies": {
+    "html2canvas": "^1.4.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  },
+  "license": "MIT"
+}

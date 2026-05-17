@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>h2c-vertical-typesetter demo</title>
+    <link rel="stylesheet" href="./demo.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="controls">
+        <h1>h2c-vertical-typesetter</h1>
+        <p>
+          A small html2canvas helper for reliable vertical-rl Chinese text capture.
+          Select text in the field to see the deterministic canvas preview.
+        </p>
+        <textarea id="sourceText">福主：众多  参查来课：乙巳(2025)年农历八月初四日午时中午十一点五十八分兴工行砖建门；课依玄空紫白数理评述：飞得一白、六白、八白吉星到山，一六同宗，催官旺水秀峰，官居极品，六八为武士财帛。再依五行分析：三奇到丁门，禄贵满盘。日值：玉堂、官日、益后贵人到位；年庚基本相生，年月大利，课合中上吉，用之香火鼎盛、丁财兴旺。</textarea>
+        <div class="button-row">
+          <button id="captureButton" type="button">Download PNG</button>
+          <button id="styleButton" type="button">Style sample range</button>
+          <button id="clearButton" type="button">Clear styles</button>
+        </div>
+      </section>
+
+      <section class="paper-wrap">
+        <div id="paper" class="paper">
+          <header class="paper-title">Vertical Capture Demo</header>
+          <div id="verticalBox" class="vertical-box" data-h2c-vertical>
+            <div class="guide-line line-1"></div>
+            <div class="guide-line line-2"></div>
+            <div class="guide-line line-3"></div>
+            <div class="guide-line line-4"></div>
+            <div class="guide-line line-5"></div>
+            <canvas id="previewCanvas" class="h2c-vrl-preview" aria-hidden="true"></canvas>
+            <textarea id="verticalTextarea" spellcheck="false"></textarea>
+          </div>
+          <footer class="paper-footer">Generated through html2canvas + h2c-vertical-typesetter</footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="../dist/h2c-vertical-typesetter.global.js"></script>
+    <script src="./demo.js"></script>
+  </body>
+</html>

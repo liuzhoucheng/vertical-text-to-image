@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eef1f4;
+  color: #20252c;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(520px, 1fr);
+  gap: 32px;
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.controls {
+  align-self: start;
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.controls h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.controls p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+#sourceText {
+  width: 100%;
+  height: 220px;
+  resize: vertical;
+  padding: 12px;
+  border: 1px solid #c9d1db;
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  min-height: 36px;
+  border: 1px solid #b6c0cc;
+  border-radius: 6px;
+  background: #fff;
+  color: #1d2733;
+  cursor: pointer;
+  font: inherit;
+  padding: 0 12px;
+}
+
+button:hover {
+  background: #f5f8fb;
+}
+
+.paper-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.paper {
+  width: 560px;
+  min-height: 790px;
+  padding: 36px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(22, 34, 51, 0.18);
+}
+
+.paper-title {
+  margin-bottom: 22px;
+  border-bottom: 2px solid #111;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding-bottom: 12px;
+}
+
+.vertical-box {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  border: 1px solid #111;
+  color: #111;
+  font-family: "SimSun", "Songti SC", serif;
+  font-size: 26px;
+  letter-spacing: 0.1px;
+  line-height: 52px;
+  overflow: hidden;
+  writing-mode: vertical-rl;
+}
+
+.vertical-box textarea {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  resize: none;
+  overflow: hidden;
+  background: transparent;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: transparent;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-orientation: mixed;
+  writing-mode: inherit;
+}
+
+.vertical-box textarea::selection {
+  background: transparent;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.h2c-vrl-preview {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.guide-line {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #111;
+}
+
+.line-1 { left: 16.666%; }
+.line-2 { left: 33.333%; }
+.line-3 { left: 50%; }
+.line-4 { left: 66.666%; }
+.line-5 { left: 83.333%; }
+
+.paper-footer {
+  margin-top: 18px;
+  color: #5b6673;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    position: static;
+  }
+}
