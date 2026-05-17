@@ -476,7 +476,7 @@ const drawLayoutItems = (ctx, layout, drawOptions = {}) => {
       ctx.fillText(item.text, originX + item.x * scale, originY + item.y * scale);
     }
 
-    drawVerticalUnderline(ctx, item, scale, originX, origin);
+    drawVerticalUnderline(ctx, item, scale, originX, originY);
   }
 };
 
@@ -686,7 +686,7 @@ export async function captureWithVerticalTypeset(root, options = {}) {
       const tag = (el.tagName || "").toUpperCase();
       return tag === "TEXTAREA" || (tag === "INPUT" && ((el.type || "text").toLowerCase() === "text"));
     },
-    onclon,
+    onclone,
   });
 
   const ctx = baseCanvas.getContext("2d");
@@ -726,4 +726,4 @@ export default {
   getVerticalTextLayout,
   getVisibleVerticalText,
   paintVisibleVerticalText,
-}
+};
